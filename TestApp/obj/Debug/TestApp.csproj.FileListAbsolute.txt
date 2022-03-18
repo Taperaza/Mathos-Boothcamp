@@ -1,0 +1,8 @@
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\bin\Debug\TestApp.exe.config
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\bin\Debug\TestApp.exe
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\bin\Debug\TestApp.pdb
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\obj\Debug\TestApp.csproj.AssemblyReference.cache
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\obj\Debug\TestApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\obj\Debug\TestApp.csproj.CoreCompileInputs.cache
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\obj\Debug\TestApp.exe
+C:\Users\marin\OneDrive\Desktop\TestApp\TestApp\obj\Debug\TestApp.pdb
