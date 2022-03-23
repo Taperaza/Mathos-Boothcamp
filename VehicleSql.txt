@@ -1,0 +1,53 @@
+CREATE TABLE Vehicle (
+    ID int NOT NULL PRIMARY KEY,
+    CarBrand varchar(50),    
+    CarModel varchar(50),
+    ProductionYaer int,
+    Usage varchar (50)
+    );
+CREATE TABLE CarInformation (
+    
+    VehicleType varchar(50),
+    VehicleColor varchar(50),
+    VehiclePrice int,
+    VehiceID int      
+    );
+CREATE TABLE Buyer (
+    BuyerID int not null,
+    BuyerFirstName varchar(50),
+    BuyerLastName varchar(50),
+    FOREIGN KEY (CarId) REFERENCES Vehicle(ID)
+     );
+insert into CarInformation(VehicleType,VehicleColor,VehiclePrice,VehicleID)VALUES
+('Black','Caravan','35000','101'),
+('Black','SUV','80000','102'),
+('White','Sport','100000','103'),
+('Gold','Sport','99000','104');
+('Yellow','Offroad','42000','105')
+('Red','Comfort','250000','106')
+insert into Vehicle(CarBrand,CarModel,ProductionYear,Usage,ID)VALUES
+ 
+('Opet','Astra','2015','Used','101'),
+('Renault','Kadjar','2016','101','102'),
+('Bmw','320D','35000','2017','103'),
+('Audi','A7','35000','2019','104'),
+('Citroen','C3','35000','2013','105'),
+('Mercedes','GLA','35000','2020','106')
+insert into Buyer(BuyerFirstName,BuyerLastName,BuyerID)VALUES
+('Sam','Smith',101),
+('John','Doe',102),
+('Milivoj','Kevrelovski',103),
+('Muharem','Džedaj',104),
+('Ivan','Panjolski',105),
+('Snoop','Dogg',106),
+Select * from Vehicle
+Select * from CarInformation
+SELECT *
+FROM ((Customer
+INNER JOIN Buyer ON Vehicle.ID = Buyer.CarId)
+DECLARE @PageNumber AS INT
+DECLARE @RowsOfPage AS INT
+SET @PageNumber=2
+SET @RowsOfPage=2
+SELECT CarBrand,CarModel,ProductionYear,Usage,ID FROM Vehicle
+ORDER BY ProductionYear 
