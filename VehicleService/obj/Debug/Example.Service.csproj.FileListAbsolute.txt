@@ -1,0 +1,17 @@
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\VehicleService.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\VehicleService.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Model.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Service.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\VehicleRepository.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Model.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Repository.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Model.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Service.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\VehicleRepository.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Model.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\bin\Debug\Example.Repository.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\obj\Debug\Example.Service.csproj.AssemblyReference.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\obj\Debug\Example.Service.csproj.CoreCompileInputs.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\obj\Debug\Example.Service.csproj.CopyComplete
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\obj\Debug\VehicleService.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleService\obj\Debug\VehicleService.pdb

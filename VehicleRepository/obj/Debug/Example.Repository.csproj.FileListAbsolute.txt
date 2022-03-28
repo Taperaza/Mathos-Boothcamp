@@ -1,0 +1,13 @@
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\VehicleRepository.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\VehicleRepository.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Model.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Repository.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Model.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Model.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Repository.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\bin\Debug\Example.Model.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\obj\Debug\Example.Repository.csproj.AssemblyReference.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\obj\Debug\Example.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\obj\Debug\Example.Repository.csproj.CopyComplete
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\obj\Debug\VehicleRepository.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\VehicleRepository\obj\Debug\VehicleRepository.pdb

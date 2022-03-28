@@ -1,6 +1,6 @@
 ﻿namespace Example.WebApi.Models
 {
-    public class Vehicle
+    public class RESTVehicle
     {
         public string CarBrand { get; set; }
         public int ID { get; set; }
@@ -8,7 +8,7 @@
         public int ProductionYear { get; set; }
         public string Usage { get; set; }
 
-        public Vehicle(int id, string carbrand, string carmodel, string usage, int prodyear)
+        public RESTVehicle(int id, string carbrand, string carmodel, string usage, int prodyear)
         {
             ID = id;
             CarBrand = carbrand;
@@ -17,7 +17,7 @@
             Usage = usage;
         }
 
-        public Vehicle()
+        public RESTVehicle()
         {
         }
     }

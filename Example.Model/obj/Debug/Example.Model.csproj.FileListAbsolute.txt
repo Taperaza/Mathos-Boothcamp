@@ -1,0 +1,9 @@
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\bin\Debug\Example.Model.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\bin\Debug\Example.Model.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\bin\Debug\Example.Model.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\bin\Debug\Example.Model.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\obj\Debug\Example.Model.csproj.AssemblyReference.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\obj\Debug\Example.Model.csproj.CoreCompileInputs.cache
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\obj\Debug\Example.Model.csproj.CopyComplete
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\obj\Debug\Example.Model.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.Model\obj\Debug\Example.Model.pdb

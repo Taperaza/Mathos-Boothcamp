@@ -168,3 +168,15 @@ C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\obj\Debug\Examp
 C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\obj\Debug\Example.WebApi.csproj.CopyComplete
 C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\obj\Debug\Example.WebApi.dll
 C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\obj\Debug\Example.WebApi.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Model.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Service.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\VehicleService.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Model.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\VehicleRepository.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Repository.Common.dll
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Model.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Service.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\VehicleService.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Model.Common.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\VehicleRepository.pdb
+C:\Users\Larisa\Desktop\Kod\Web Api\ProductWebApi\Example.WebApi\bin\Example.Repository.Common.pdb
