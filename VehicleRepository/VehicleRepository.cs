@@ -5,6 +5,7 @@ using Example.Model;
 using System.Net;
 using Example.Repository.Common;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace ExampleRepository
 {
@@ -14,90 +15,159 @@ namespace ExampleRepository
         public List<VehicleModel> vehicles = new List<VehicleModel>();
         static string connectionString = @"Data Source=DESKTOP-LMLVJ79\SQLEXPRESS;Initial Catalog = ExampleSQL;Integrated Security = True";
 
-        public List<VehicleModel> GetPage()
+        public async Task<List<VehicleModel>> GetPageAsync()
         {
 
             SqlConnection connection = new SqlConnection(connectionString);
             using (connection)
             {
                 SqlCommand command = new SqlCommand("SELECT * FROM Vehicle;", connection);
-                connection.Open();
+                await connection.OpenAsync();
                 SqlDataReader reader = command.ExecuteReader();
 
-
-
-                while (reader.Read())
+                if (reader.HasRows)
                 {
-                    var vehicle = new VehicleModel();
-                    vehicle.CarBrand = reader.GetString(1);
-                    vehicle.CarModel = reader.GetString(2);
-                    vehicle.ID = reader.GetInt32(0);
-                    vehicle.ProductionYear = reader.GetInt32(3);
-                    vehicle.Usage = reader.GetString(4);
-                    vehicles.Add(vehicle);
+                    List<VehicleModel> result = new List<VehicleModel>();
+                    while (await reader.ReadAsync())
+                    {
+                        var vehicle = new VehicleModel();
+                        vehicle.CarBrand = reader.GetString(1);
+                        vehicle.CarModel = reader.GetString(2);
+                        vehicle.ID = reader.GetInt32(0);
+                        vehicle.ProductionYear = reader.GetInt32(3);
+                        vehicle.Usage = reader.GetString(4);
+                        vehicles.Add(vehicle);
 
 
+
+                    }
+                    connection.Close();
+                    reader.Close();
+                    return result;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+
+        }
+
+
+        public async Task<VehicleModel> GetVehicleByIdAsync(int id)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand($"SELECT * FROM Vehicle WHERE ID = '{id}';", connection);
+                await connection.OpenAsync();
+                SqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.Read())
+                {
+                    VehicleModel vehicle = new VehicleModel
+                    {
+                        CarBrand = reader.GetString(1),
+                        CarModel = reader.GetString(2),
+                        ID = reader.GetInt32(0),
+                        ProductionYear = reader.GetInt32(3),
+                        Usage = reader.GetString(4)
+                    };
+                    reader.Close();
+                    return vehicle;
 
                 }
-                connection.Close();
-                reader.Close();
+                else
+                {
+                    reader.Close();
+                    return null;
+                }
 
 
             }
-            return vehicles;
         }
 
 
 
 
-        public VehicleModel PostColumn(VehicleModel vehicle)
+
+
+
+
+        public async Task PostColumnAsync(VehicleModel vehicle)
         {
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlDataAdapter adapter = new SqlDataAdapter();
-
-            using (connection)
-            {
-                connection.Open();
-                string NewColumn = $"INSERT into Vehicle(ID, CarBrand, CarModel, ProductionYear, Usage) VALUES" +
+            string newColumn = $"INSERT into Vehicle(ID, CarBrand, CarModel, ProductionYear, Usage) VALUES" +
                     $"('{vehicle.ID}'," +
                     $"'{vehicle.CarBrand}'," +
                     $"'{vehicle.CarModel}'," +
                     $"'{vehicle.ProductionYear}'," +
                     $"'{vehicle.CarBrand}')";
 
-                adapter.InsertCommand = new SqlCommand(NewColumn, connection);
-                adapter.InsertCommand.ExecuteNonQuery();
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand(newColumn, connection);
+                await connection.OpenAsync();
+                SqlDataAdapter adapter = new SqlDataAdapter(newColumn, connection);
 
+                await command.ExecuteNonQueryAsync();
                 connection.Close();
-                return vehicle;
-
             }
 
         }
 
-        public void DeleteById(int Id)
+        public async Task UpdateVehicleAsync(int id, VehicleModel vehicle)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            using (connection)
+            if (await this.GetVehicleByIdAsync(id) == null)
             {
-                connection.Open();
+                return;
+            }
+            else
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                string updateColumn = $"UPDATE Vehicle SET CarBrand = '{vehicle.CarBrand}',ID = '{vehicle.ID}'," +
+                    $"CarModel = '{vehicle.CarModel}', Usage = '{vehicle.Usage}', ProductionYear = '{vehicle.ProductionYear}'";
 
-                string DeleteId = $"SELECT * FROM Vehicle WHERE Id = '{Id}';";
-                SqlCommand command = new SqlCommand(DeleteId, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                if(reader.Read())
+                using(connection)
                 {
-                    connection.Close();
-                    connection.Open();
+                    SqlCommand command = new SqlCommand(updateColumn, connection);
+                    await connection.OpenAsync();
+                    SqlDataAdapter adapter = new SqlDataAdapter(updateColumn, connection);
 
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    DeleteId = $"DELETE FROM Vehicle WHERE Id = '{Id}';";
-                    adapter.InsertCommand = new SqlCommand(DeleteId, connection);
-                    adapter.InsertCommand.ExecuteNonQuery();
-
+                    await command.ExecuteNonQueryAsync();
                     connection.Close();
                 }
+
+            }
+        }
+                
+
+            
+
+        
+
+        
+
+        public  async Task DeleteByIdAsync(int Id)
+        {
+            if (await this.GetVehicleByIdAsync(Id)==null)
+            {
+                return;
+            }
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            string deleteColumn = $"DELETE FROM Vehicle WHERE ID = '{Id}';";
+
+            using(connection)
+            {
+                SqlCommand command = new SqlCommand(deleteColumn, connection);
+                await connection.OpenAsync();
+                SqlDataAdapter adapter = new SqlDataAdapter(deleteColumn, connection);
+
+                await command.ExecuteNonQueryAsync();
+                connection.Close();
             }
         }
 

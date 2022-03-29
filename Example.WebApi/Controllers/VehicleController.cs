@@ -12,38 +12,119 @@ using System.Data;
 using Example.Model;
 using Vehicle.Service;
 using Example.Service.Common;
+using System.Threading.Tasks;
 
 namespace Example.WebApi.Controllers
 {
     public class VehicleController : ApiController
     {
-        public HttpResponseMessage GetPage()
+        public async Task<HttpResponseMessage> GetPageAsync()
         {
             VehicleService vehicleService = new VehicleService();
-            List<VehicleModel> vehicles = new List<VehicleModel>();
-            vehicles = vehicleService.GetPage();
-            if (vehicles == null)
+           
+            if (vehicleService.GetPageAsync() == null)
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.OK, vehicles );
+                List<RESTVehicle> vehiclesREST = new List<RESTVehicle>();
+                foreach (VehicleModel vehicle in await vehicleService.GetPageAsync())
+                {
+                    RESTVehicle vehicleREST = new RESTVehicle()
+                    {
+                        ID = vehicle.ID,
+                        CarBrand = vehicle.CarBrand,
+                        CarModel = vehicle.CarModel,
+                        Usage = vehicle.Usage,
+                        ProductionYear = vehicle.ProductionYear
+                    };
+                    vehiclesREST.Add(vehicleREST);
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, vehiclesREST );
+            }
+        }
+
+        public async Task<HttpResponseMessage> GetIdAsync(int id)
+        {
+            VehicleService vehicleService =new VehicleService();
+
+            if (await vehicleService.GetVehicleByIdAsync(id)==null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            else
+            {
+                RESTVehicle vehicleREST = new RESTVehicle
+                {
+                    CarBrand = (await vehicleService.GetVehicleByIdAsync(id)).CarBrand,
+                    ID = (await vehicleService.GetVehicleByIdAsync(id)).ID,
+                    CarModel = (await vehicleService.GetVehicleByIdAsync(id)).CarModel,
+                    Usage = (await vehicleService.GetVehicleByIdAsync(id)).Usage,
+                    ProductionYear = (await vehicleService.GetVehicleByIdAsync(id)).ProductionYear
+
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, vehicleREST);
             }
         }
         
-        public HttpResponseMessage PostColumn([FromBody] VehicleModel car)
+        public async Task<HttpResponseMessage> PostColumnAsync([FromBody] RESTVehicle vehicleREST)
         {
             VehicleService vehicleService = new VehicleService();
-            vehicleService.PostColumn(car);
-            return Request.CreateResponse(HttpStatusCode.OK, "Successfully added.");
+            VehicleModel vehicle = new VehicleModel()
+            {
+                CarBrand = vehicleREST.CarBrand,
+                CarModel = vehicleREST.CarModel,
+                ID = vehicleREST.ID,
+                Usage = vehicleREST.Usage,
+                ProductionYear = vehicleREST.ProductionYear
+            };
+            await vehicleService.PostColumnAsync(vehicle);
+            return Request.CreateResponse(HttpStatusCode.OK, "Vehicle added");
         }
 
-        public HttpResponseMessage DeleteById(int Id)
+        public async Task<HttpResponseMessage> UpdateVehicleAsync(int id, [FromBody] RESTVehicle vehicleREST)
         {
-            VehicleService vehicleService =new VehicleService();
-            vehicleService.DeleteById(Id);
-            return Request.CreateResponse(HttpStatusCode.OK, $"Vehicle '{Id}'' was deleted");
+            VehicleService vehicleService = new VehicleService();
+
+            if (await vehicleService.GetVehicleByIdAsync(id)==null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            else
+            {
+                VehicleModel vehicle = new VehicleModel
+                {
+                    CarBrand = vehicleREST.CarBrand,
+                    CarModel = vehicleREST.CarModel,
+                    ID = vehicleREST.ID,
+                    Usage = vehicleREST.Usage,
+                    ProductionYear = vehicleREST.ProductionYear
+
+                };
+
+                await vehicleService.UpdateVehicleAsync(id, vehicle);
+
+                return Request.CreateResponse(HttpStatusCode.OK, "Vehicle updated");
+            }
+            
+
+            
+        }
+        public async Task<HttpResponseMessage> DeleteVehicleAsync(int id)
+        {
+            VehicleService vehicleService = new VehicleService();
+
+            if (await vehicleService.GetVehicleByIdAsync(id) == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound, "Vehicle not found.");
+            }
+            else
+            {
+                await vehicleService.DeleteByIdAsync(id);
+
+                return Request.CreateResponse(HttpStatusCode.OK, $"Vehicle '{id}'; deleted");
+            }
         }
 
 

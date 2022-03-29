@@ -15,6 +15,8 @@ namespace Example.Model
         public int ProductionYear { get; set; }
         public string Usage { get; set; }
 
+        public Guid Id { get; set; }
+
         public VehicleModel(int id, string carbrand, string carmodel, string usage, int prodyear)
         {
             ID = id;
@@ -22,6 +24,7 @@ namespace Example.Model
             CarModel = carmodel;
             ProductionYear = prodyear;
             Usage = usage;
+            
         }
 
         public VehicleModel()

@@ -14,21 +14,34 @@ namespace Vehicle.Service
         
         List<VehicleModel> car = new List<VehicleModel>();
 
-        public List<VehicleModel> GetPage()
+        public async Task<List<VehicleModel>> GetPageAsync()
         {
             VehicleRepository vehicleRepository = new VehicleRepository();
-            return vehicleRepository.GetPage();
-        }
-        public void  PostColumn(VehicleModel car)
-        {
-            VehicleRepository vehicleRepository = new VehicleRepository();
-            vehicleRepository.PostColumn(car);
+            return await  vehicleRepository.GetPageAsync();
         }
 
-        public void DeleteById(int Id)
+        public async Task<VehicleModel> GetVehicleByIdAsync(int id)
         {
             VehicleRepository vehicleRepository = new VehicleRepository();
-            vehicleRepository.DeleteById(Id);
+            return await vehicleRepository.GetVehicleByIdAsync(id);
+        }
+
+
+        public async Task PostColumnAsync(VehicleModel vehicle)
+        {
+            VehicleRepository vehicleRepository = new VehicleRepository();
+            await vehicleRepository.PostColumnAsync(vehicle);
+        }
+
+        public async Task UpdateVehicleAsync(int id, VehicleModel vehicle)
+        {
+            VehicleRepository vehicleRepository=new VehicleRepository();
+            await vehicleRepository.UpdateVehicleAsync(id, vehicle);
+        }
+        public async Task DeleteByIdAsync(int Id)
+        {
+            VehicleRepository vehicleRepository = new VehicleRepository();
+            await vehicleRepository.DeleteByIdAsync(Id);
         }
     }
 }
