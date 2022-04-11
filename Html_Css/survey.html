@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Coffee Survey</title>
+		<title>Validation</title>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script src = "Clock.Js"></script>
 	</head>
 
 	<body>
@@ -17,52 +18,46 @@
 		<li><a href="grinding.html">Grinding</a></li>
 		<li><a href="brewing.html">Brewing</a></li>
 		<li><a href="drinks.html">Drinks</a></li>
-		<li><a href="survey.html">Coffee Survey</a></li>
+		<li><a href="survey.html">Registration</a></li>
 	</ul>
 </nav>	
 </header>
-<h1>Coffee Survey</h1>
 <aside>
 <figure>
 	<img src="images/espresso.jpg" alt="a cup of espresso">
 </figure>
 </aside>
-<form action="coffee-survey.php" method="post">
-<fieldset>
-<legend>Personal Information</legend>
-	Your Name<br/>
-<input type="text" name="name" required size="40" />
-<br/>
-	Email Address<br/>
-<input type="email" name="email" required placeholder="enter a valid email address" size="40" />
-<br/>
-</fieldset>
-<fieldset>
-<legend>Your Coffee Preferences:</legend>
-	Tell us your coffee preparation methods.<br/>
-<textarea name="preparation" cols="40" rows="6"></textarea>
-<br/><br/>
-Do you grind your own beans?<br/>
-	<input type="radio" name="grind" value="yes" />yes<br/>
-	<input type="radio" name="grind" value="no" />no<br/>
-<br/>
-How do you drink your coffee?<br/>
-	<input type="checkbox" name="drink" value="sugar" />with sugar<br/>
-	<input type="checkbox" name="drink" value="cream" />with cream<br/>
-<br/>
-What is your favorite coffee drink?<br/>
-<select name="favorite">
-	<option value="">please select a drink</option>
-	<option value="drip">drip coffee</option>
-	<option value="french">french press</option>
-	<option value="espresso">espresso</option>
-	<option value="latte">latte</option>
-	<option value="flavored">flavored</option>
-<br/>
-<input id="submit" type="submit" value="Send"/>
-</select>
-</fieldset>
-</form>
+<form action = "" name = "myForm" onsubmit = "return(validate());">
+        <h1 align="center">USER REGISTRATION</H1>
+         <table align="center" cellspacing = "3" cellpadding = "3" border = "3">
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "name" /></td>
+            </tr>
+            <tr>
+               <td align = "right">E-mail</td>
+               <td><input type = "text" name = "email" /></td>
+            </tr>
+            <tr>
+               <td align = "right">Phone Number</td>
+               <td><input type = "text" name = "phone" /></td>
+            </tr>
+            <tr>
+               <td align = "right">Coffee choice</td>
+               <td>
+                  <select name = "coffee choice">
+                     <option value = "0" selected>Select</option>
+                     <option value = "1">Espresso</option>
+                     <option value = "2">Latte</option>
+                     <option value = "3">Americano</option>
+                     <option value = "4">Flat white</option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+         <p id="demo" style="color:red; text-align:center"></p>
+   <div style="text-align:center"><input type = "submit" value = "Submit" /></div>
+      </form>
 <footer>
 <nav>
 	<ul>
@@ -71,7 +66,7 @@ What is your favorite coffee drink?<br/>
 		<li><a href="grinding.html">Grinding</a></li>
 		<li><a href="brewing.html">Brewing</a></li>
 		<li><a href="drinks.html">Drinks</a></li>
-		<li><a href="survey.html">Coffee Survey</a></li>
+		<li><a href="survey.html">Registration</a></li>
 	</ul>
 </nav>	
 </footer>
