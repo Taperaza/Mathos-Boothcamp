@@ -6,6 +6,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<script src = "Clock.Js"></script>
+		
 	</head>
 
 	<body>
@@ -27,37 +28,24 @@
 	<img src="images/espresso.jpg" alt="a cup of espresso">
 </figure>
 </aside>
-<form action = "" name = "myForm" onsubmit = "return(validate());">
-        <h1 align="center">USER REGISTRATION</H1>
-         <table align="center" cellspacing = "3" cellpadding = "3" border = "3">
-            <tr>
-               <td align = "right">Name</td>
-               <td><input type = "text" name = "name" /></td>
-            </tr>
-            <tr>
-               <td align = "right">E-mail</td>
-               <td><input type = "text" name = "email" /></td>
-            </tr>
-            <tr>
-               <td align = "right">Phone Number</td>
-               <td><input type = "text" name = "phone" /></td>
-            </tr>
-            <tr>
-               <td align = "right">Coffee choice</td>
-               <td>
-                  <select name = "coffee choice">
-                     <option value = "0" selected>Select</option>
-                     <option value = "1">Espresso</option>
-                     <option value = "2">Latte</option>
-                     <option value = "3">Americano</option>
-                     <option value = "4">Flat white</option>
-                  </select>
-               </td>
-            </tr>
-         </table>
-         <p id="demo" style="color:red; text-align:center"></p>
-   <div style="text-align:center"><input type = "submit" value = "Submit" /></div>
-      </form>
+<div class="container">
+        <div class="login">
+            <h3>Login</h3>
+            <input type="text" id="loginName" placeholder="Username"><br>
+            <input type="password" id="loginPassword" placeholder="Password"><br>
+            <button id="loginButton">Submit</button>
+            <p id="loginResult"></p> 
+        </div>
+        <hr>
+        <div class="register">
+            <h3>Register</h3>
+            <input type="text" id="registerName" placeholder="Username"><br>
+            <input type="password" id="registerPassword" placeholder="Password"><br>
+            <button id="registerButton">Submit</button>
+            <p id="registerResult"></p> 
+        </div>
+    </div>
+	<script src = "Clock.Js"></script>
 <footer>
 <nav>
 	<ul>
