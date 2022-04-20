@@ -12,7 +12,7 @@ namespace ExampleRepository
 
     public class VehicleRepository : IVehicleRepository
     {
-        public List<VehicleModel> vehicles = new List<VehicleModel>();
+        
         static string connectionString = @"Data Source=DESKTOP-LMLVJ79\SQLEXPRESS;Initial Catalog = ExampleSQL;Integrated Security = True";
 
         public async Task<List<VehicleModel>> GetPageAsync()
@@ -36,7 +36,7 @@ namespace ExampleRepository
                         vehicle.ID = reader.GetInt32(0);
                         vehicle.ProductionYear = reader.GetInt32(3);
                         vehicle.Usage = reader.GetString(4);
-                        vehicles.Add(vehicle);
+                        result.Add(vehicle);
 
 
 

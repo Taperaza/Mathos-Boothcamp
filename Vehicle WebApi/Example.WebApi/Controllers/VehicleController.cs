@@ -13,9 +13,11 @@ using Example.Model;
 using Vehicle.Service;
 using Example.Service.Common;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 
 namespace Example.WebApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VehicleController : ApiController
     {
         public async Task<HttpResponseMessage> GetPageAsync()
