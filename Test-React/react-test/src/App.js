@@ -1,58 +1,31 @@
-import './App.css';
+import './components/index.css';
 import React from 'react';
-import { useState } from 'react';
+import Nav from './components/Nav';
+import Form from './components/Form';
+import GetData from './components/GetData';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App (){
+  return (
+    <Router>
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path ="/" element={<Home/>} />
+          <Route path ="/getdata" element={<GetData/>} />
+          <Route path ="/form" element={<Form/>} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
+const Home = () =>(
+  <div>
+    <h1>Home Page</h1>
+  </div>
+)
 
-  const [users, setUsers] = useState({
-   
-  })
-
-  const [submitted, setSubmitted] = useState(false);
-  
-  const handleUserNameInputChange = (event) => {
-    setUsers({...users, username:event.target.value})
-  }
-  
-  const handlePasswordInputChange = (event) => {
-    setUsers({...users, password:event.target.value})
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitted(true);
-    console.log(users);
-  }
-  
-  return(
-    <div className="form-container">
-        <form className="register-form" onSubmit={handleSubmit}>
-          {submitted ? <div className="success-message">Success!</div> : null}
-          <input
-            onChange={handleUserNameInputChange}
-            value={users.value}
-            className="form-field"
-            placeholder="Username"
-            name="username" />
-          <input
-            onChange={handlePasswordInputChange}
-            value={users.value}
-            className="form-field"
-            placeholder="Password"
-            name="password" />
-          <button
-            className="form-field"
-            type="submit">Register</button>
-            
-        </form>
-    </div>
-   
-  )        
-  
-  
-
-}
 export default App;
 
 
