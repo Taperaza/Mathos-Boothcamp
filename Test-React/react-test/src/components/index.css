@@ -1,0 +1,59 @@
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.App {
+  text-align: center;
+}
+
+form{
+  margin: 12% auto;
+  width: 19em;
+  text-align: center;
+  position: relative;
+  -webkit-animation: moveDown .3s;
+  -moz-animation: moveDown .3s;
+  animation: moveDown .3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+input {
+  color: rgb(246, 244, 244);
+  font-size: 1.5em;
+  border-top: none;
+  border-left: solid 1px;
+  border-right: solid 1px;
+  border-bottom: solid 1px;
+  border-color: #bbb;
+  background: transparent;
+  display: block;
+  height: 2em;
+  width: 12em;
+  margin-bottom: 5%;
+  padding: 0 3%;
+  position: relative;
+  z-index: 0;
+}
+
+nav{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(74, 94, 101);
+  color: white;
+}
+
+.nav-links{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+Link{
+  color: rgb(255, 255, 255);
+}
