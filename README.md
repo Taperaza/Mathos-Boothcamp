@@ -1,3 +1,8 @@
 # Mathos-Boothcamp
 Mathos Web Development Boothcamp 
-Web Api
+
+Basic C# OOP practice
+ASP.NET Web Api
+Sql Practice
+Html, Css, JavaScript practice
+React practice
